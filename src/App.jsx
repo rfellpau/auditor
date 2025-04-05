@@ -81,7 +81,7 @@ function App() {
                 <div className="modal-content">
                     <div className="modal-header">
                         <span 
-                          style={{fontSize: 50, lineHeight: 1, paddingTop: 7.5, paddingRight: 15, paddingBottom: 7.5, paddingLeft: 15}} 
+                          style={{fontSize: 48, lineHeight: 1, paddingTop: 10, paddingRight: 15, paddingBottom: 10, paddingLeft: 15}} 
                           className="bg-light border border-3 font-monospace fw-bold rounded-3 text-nowrap">
                           {format(selected.reg)}
                         </span>
