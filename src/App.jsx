@@ -53,7 +53,6 @@ function App() {
                   </td>
                   <td>
                     <span className="d-none d-sm-block fw-normal">{vehicle.vin}</span>
-                    <span className="d-block d-sm-none fw-normal">{truncate(vehicle.vin)}</span>
                   </td>
                   <td>
                   <button 
@@ -83,7 +82,7 @@ function App() {
                 <div className="modal-content">
                     <div className="modal-header">
                         <span 
-                          style={{fontSize: 60, lineHeight: 1.2, paddingLeft: 15, paddingRight: 15}} 
+                          style={{fontSize: 50, lineHeight: 1.25, paddingLeft: 15, paddingRight: 15}} 
                           className="bg-light border border-3 font-monospace fw-bold rounded-3 text-nowrap">
                           {format(selected.reg)}
                         </span>
