@@ -11,7 +11,6 @@ function App() {
   const alphabetically = (a, b) => a.reg < b.reg ? -1 : 1;
   const format = (value) => `${value.slice(0, 4)} ${value.slice(4)}`
   const matchSearchQuery = (vehicle) => vehicle.reg.includes(searchQuery)
-  const truncate = (value) => `${value.slice(0, value.length - 5)}...`
 
   return (
     <>
@@ -82,7 +81,7 @@ function App() {
                 <div className="modal-content">
                     <div className="modal-header">
                         <span 
-                          style={{fontSize: 50, lineHeight: 1.25, paddingLeft: 15, paddingRight: 15}} 
+                          style={{fontSize: 50, lineHeight: 1, paddingTop: 7.5, paddingRight: 15, paddingBottom: 7.5, paddingLeft: 15}} 
                           className="bg-light border border-3 font-monospace fw-bold rounded-3 text-nowrap">
                           {format(selected.reg)}
                         </span>
