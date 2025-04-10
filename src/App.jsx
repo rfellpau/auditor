@@ -106,7 +106,7 @@ function App() {
                         </div>
                         <span className="d-block fs-5 fw-medium my-2 text-black text-center">
                           {selected.vin}
-                          </span>
+                        </span>
                     </div>
                 </div>
             </div>
