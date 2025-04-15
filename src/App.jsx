@@ -1,12 +1,24 @@
-import { useState } from 'react'
-import data from './store/data.json';
+import { useState, useRef } from 'react'
+import active from './store/active.json';
+import missing from './store/missing.json';
 import QRCode from "react-qr-code";
+
+const options = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  hour: '2-digit',
+  minute: '2-digit',
+}
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('')
-  const [selected, setSelected] = useState(data[0])
+  const [selected, setSelected] = useState(active.payload[0])
   const [showModal, setShowModal] = useState(false)
-  const [vehicles] = useState(data)
+  const [vehicles] = useState(active.payload)
+  
+  const alert = useRef(null);
 
   const alphabetically = (a, b) => a.reg < b.reg ? -1 : 1;
   const format = (value) => `${value.slice(0, 4)} ${value.slice(4)}`
@@ -14,6 +26,16 @@ function App() {
 
   return (
     <>
+    <div class="alert alert-primary alert-dismissible rounded-0 px-0 mb-0" role="alert" ref={alert}>
+      <div className="container">
+        <strong>Updated:</strong> {new Date(active.meta.updatedAt * 1000).toLocaleDateString('en-GB', options)}
+        <button 
+        type="button" 
+        class="btn-close"
+        aria-label="Close"
+        onClick={() => alert.current.remove()}/>
+      </div>
+    </div>
       <nav className="bg-body-tertiary border-bottom navbar">
         <div className="container">
           <div className="align-items-center d-flex flex-grow-1">
@@ -114,6 +136,10 @@ function App() {
       </div>
     </>
   )
+}
+
+function Alert() {
+
 }
 
 export default App
