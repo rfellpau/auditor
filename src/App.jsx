@@ -1,13 +1,13 @@
 import { useState, useRef } from 'react'
 import expected from './store/expected.json';
 import missing from './store/missing.json';
-import QRCode from "react-qr-code";
+import QRCode from 'react-qr-code';
 
 const dateStringFormat = {
-  weekday: "long",
-  year: "numeric",
-  month: "long",
-  day: "numeric",
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
   hour: '2-digit',
   minute: '2-digit'
 }
@@ -143,10 +143,10 @@ function App() {
                   <div className="modal-body pb-1">
                       <div style={{ height: "auto", margin: "0 auto", maxWidth: 512, width: "100%" }}>
                           <QRCode
-                            size={256}
-                            style={{ height: "auto", maxWidth: "100%", width: "100%" }}
-                            value={modalState.vin}
-                            viewBox={`0 0 256 256`}/>
+                          size={256}
+                          style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+                          value={modalState.vin}
+                          viewBox={`0 0 256 256`}/>
                       </div>
                       <span className="d-block fs-5 fw-medium my-2 text-black text-center">
                         {modalState.vin}
