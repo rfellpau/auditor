@@ -4,10 +4,10 @@ import missing from './store/missing.json';
 import QRCode from 'react-qr-code';
 
 const dateStringFormat = {
-  weekday: 'long',
-  year: 'numeric',
-  month: 'long',
+  weekday: 'short',
   day: 'numeric',
+  month: 'long',
+  year: 'numeric',
   hour: '2-digit',
   minute: '2-digit'
 }
